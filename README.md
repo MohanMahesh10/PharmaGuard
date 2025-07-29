@@ -1,143 +1,112 @@
 # 🛡️ PharmaGuard - Medicine Authenticity Checker
 
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Svelte](https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev/)
+[![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
 A modern web application that helps users verify the authenticity of medicines using FDA NDC (National Drug Code) database validation and expiry date checking.
 
 ## ✨ Features
 
-- **NDC Validation**: Verifies medicine codes against the FDA NDC database
-- **Expiry Check**: Validates if medicines are expired or still valid
-- **AI-Powered Feedback**: Optional Google Gemini API integration for natural language explanations
-- **Modern UI**: Beautiful, responsive Svelte frontend
-- **Real-time Results**: Instant verification with clear visual feedback
-- **Dockerized**: Easy deployment with Docker and Docker Compose
-
-## 🏗️ Project Structure
-
-```
-pharmaguard/
-├── backend/                 # Node.js + Express API
-│   ├── index.js            # Main server file
-│   ├── package.json        # Backend dependencies
-│   ├── Dockerfile          # Container configuration
-│   └── .env.example        # Environment variables template
-├── frontend/               # Svelte frontend
-│   ├── src/
-│   │   ├── App.svelte      # Main component
-│   │   ├── main.js         # App entry point
-│   │   └── app.css         # Global styles
-│   ├── index.html          # HTML template
-│   ├── package.json        # Frontend dependencies
-│   ├── vite.config.js      # Vite configuration
-│   ├── Dockerfile          # Production container
-│   └── Dockerfile.dev      # Development container
-├── docker-compose.yml      # Development Docker setup
-├── docker-compose.prod.yml # Production Docker setup
-├── docker-run.bat          # Windows Docker script
-├── docker-run.sh           # Unix Docker script
-└── README.md              # This file
-```
+- **🔍 NDC Validation**: Verifies medicine codes against the FDA NDC database
+- **📅 Expiry Check**: Validates if medicines are expired or still valid
+- **🤖 AI-Powered Feedback**: Optional Google Gemini API integration for natural language explanations
+- **🎨 Modern UI**: Beautiful, responsive Svelte frontend with test data helper
+- **⚡ Real-time Results**: Instant verification with clear visual feedback
+- **🐳 Dockerized**: Easy deployment with Docker and Docker Compose
+- **🧪 Test Data**: Comprehensive dummy data for reliable testing
 
 ## 🚀 Quick Start
 
 ### Option 1: Docker (Recommended)
 
-**Prerequisites:** Docker and Docker Compose installed
+**Prerequisites:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
 
-#### Windows:
-```cmd
-# Run the setup script
-docker-run.bat
-
-# Or manually:
-# Development mode
-docker compose up --build
-
-# Production mode
-docker compose -f docker-compose.prod.yml up --build
-```
-
-#### Unix/Linux/macOS:
 ```bash
-# Make script executable
-chmod +x docker-run.sh
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/PharmaGuard.git
+cd PharmaGuard
 
-# Run the setup script
-./docker-run.sh
-
-# Or manually:
-# Development mode
+# Start the application
 docker compose up --build
-
-# Production mode
-docker compose -f docker-compose.prod.yml up --build
 ```
 
 **Access the application:**
-- **Development**: Frontend at http://localhost:5173, Backend at http://localhost:3000
-- **Production**: Frontend at http://localhost, Backend at http://localhost:3000
+- 🎨 **Frontend**: http://localhost:5173
+- 🔧 **Backend API**: http://localhost:3000
 
 ### Option 2: Manual Setup
 
 **Prerequisites:** Node.js 18+ and npm
 
-#### Backend Setup
+```bash
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/PharmaGuard.git
+cd PharmaGuard
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
+# Setup backend
+cd backend
+npm install
+cp .env.example .env
+npm start
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+# Setup frontend (in new terminal)
+cd ../frontend
+npm install
+npm run dev
+```
 
-3. Create environment file:
-   ```bash
-   cp .env.example .env
-   ```
-   
-4. (Optional) Add your Google Gemini API key to `.env`:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   ```
+## 🧪 Testing the Application
 
-5. Start the server:
-   ```bash
-   npm start
-   ```
-   
-   The backend will run on `http://localhost:3000`
+The application includes comprehensive test data for easy demonstration:
 
-#### Frontend Setup
+1. **Click "🧪 Show Test Data"** on the frontend
+2. **Select any sample NDC** to auto-fill the form
+3. **Use Quick Actions** to test different scenarios
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
+### Sample NDC Codes
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+| NDC Code | Medicine | Status | Use Case |
+|----------|----------|--------|----------|
+| `0002-7510-01` | Humulin R (insulin) | Valid | ✅ Prescription verification |
+| `0069-2587-10` | Lyrica (pregabalin) | Valid | ⚠️ Expiry testing |
+| `55111-118-78` | Ibuprofen | Valid | 💊 OTC medicine |
+| `99999-999-99` | Invalid NDC | Invalid | ❌ Counterfeit detection |
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-   
-   The frontend will run on `http://localhost:5173`
+## 🏗️ Project Structure
 
-## 🔌 API Endpoints
+```
+pharmaguard/
+├── 📁 backend/                 # Node.js + Express API
+│   ├── 📄 index.js            # Main server file
+│   ├── 📄 dummy-data.js        # Test data
+│   ├── 📄 package.json        # Dependencies
+│   └── 🐳 Dockerfile          # Container config
+├── 📁 frontend/               # Svelte frontend
+│   ├── 📁 src/
+│   │   ├── 📄 App.svelte      # Main component
+│   │   ├── 📄 main.js         # Entry point
+│   │   └── 📄 app.css         # Global styles
+│   ├── 📄 package.json        # Dependencies
+│   ├── 🐳 Dockerfile          # Production container
+│   └── 🐳 Dockerfile.dev      # Development container
+├── 🐳 docker-compose.yml      # Development setup
+├── 🐳 docker-compose.prod.yml # Production setup
+├── 📄 README.md              # This file
+└── 📄 TESTING.md             # Testing guide
+```
 
-### POST /verify
+## 🔌 API Documentation
 
-Verifies a medicine using NDC code and expiry date.
+### Verification Endpoint
 
-**Request Body:**
-```json
+```http
+POST /verify
+Content-Type: application/json
+
 {
-  "ndc": "12345-678-90",
+  "ndc": "0002-7510-01",
   "expiry": "2025-12-31"
 }
 ```
@@ -148,96 +117,74 @@ Verifies a medicine using NDC code and expiry date.
   "status": "verified|expired|fake",
   "message": "Human-readable explanation",
   "fda_data": {
-    "brand_name": "Medicine Name",
-    "generic_name": "Generic Name",
-    "dosage_form": "TABLET",
-    "labeler_name": "Manufacturer",
-    "marketing_status": "Active"
+    "brand_name": "Humulin R",
+    "generic_name": "insulin human",
+    "dosage_form": "INJECTION",
+    "labeler_name": "Eli Lilly and Company",
+    "marketing_status": "Prescription"
   }
 }
 ```
 
-### GET /health
+### Other Endpoints
 
-Health check endpoint.
-
-## 🧪 Testing the Application
-
-You can test the application with these sample NDC codes from the FDA database:
-
-- `0002-7510-01` - Humulin R (insulin)
-- `0069-2587-10` - Pfizer product
-- `50090-4406-0` - A-S Medication Solutions product
+- `GET /health` - Health check
+- `GET /test-data` - Available test NDC codes
 
 ## 🐳 Docker Commands
 
 ### Development Mode
 ```bash
-# Start services
+# Start with hot reload
 docker compose up --build
-
-# Stop services
-docker compose down
 
 # View logs
 docker compose logs -f
 
-# Rebuild specific service
-docker compose build backend
-docker compose build frontend
+# Stop services
+docker compose down
 ```
 
 ### Production Mode
 ```bash
-# Start services
+# Start optimized build
 docker compose -f docker-compose.prod.yml up --build
 
-# Stop services
-docker compose -f docker-compose.prod.yml down
-
-# View logs
-docker compose -f docker-compose.prod.yml logs -f
+# Run in background
+docker compose -f docker-compose.prod.yml up -d
 ```
 
-### Useful Docker Commands
-```bash
-# Remove all containers and images
-docker compose down --rmi all --volumes
+## 🔧 Configuration
 
-# Shell into backend container
-docker compose exec backend sh
+### Environment Variables
 
-# Shell into frontend container
-docker compose exec frontend sh
+Create `.env` file in `backend/` directory:
+
+```env
+PORT=3000
+GEMINI_API_KEY=your_gemini_api_key_here
+NODE_ENV=development
 ```
 
-## 🔑 Environment Variables
-
-### Backend (.env)
-
-- `PORT` - Server port (default: 3000)
-- `GEMINI_API_KEY` - Google Gemini API key (optional)
-- `NODE_ENV` - Environment mode (development/production)
-
-### Frontend
+### Frontend Configuration
 
 - `VITE_API_URL` - Backend API URL (default: http://localhost:3000)
 
 ## 🔍 How It Works
 
-1. **User Input**: Users enter an NDC code and expiry date
-2. **FDA Validation**: Backend queries the FDA NDC API to verify the medicine exists
-3. **Expiry Check**: Compares the expiry date with current date
-4. **AI Enhancement**: (Optional) Gemini API generates user-friendly explanations
-5. **Result Display**: Frontend shows verification result with medicine details
+1. **User Input**: Enter NDC code and expiry date
+2. **Smart Validation**: Checks FDA API with dummy data fallback
+3. **Expiry Analysis**: Compares dates to detect expired medicines
+4. **AI Enhancement**: Optional Gemini API for user-friendly messages
+5. **Visual Results**: Clear status indicators with detailed information
 
 ## 🎨 Status Types
 
 - ✅ **Verified**: Medicine is authentic and not expired
-- ⚠️ **Expired**: Medicine is authentic but expired
-- ❌ **Not Found**: NDC not found in FDA database (potentially counterfeit)
+- ⚠️ **Expired**: Medicine is authentic but expired  
+- ❌ **Not Found**: NDC not found (potentially counterfeit)
 
-## 🛠️ Technologies Used
+## 🧬 Technology Stack
 
 - **Frontend**: Svelte, Vite, Modern CSS
 - **Backend**: Node.js, Express, Axios
@@ -245,14 +192,58 @@ docker compose exec frontend sh
 - **Containerization**: Docker, Docker Compose
 - **Web Server**: Nginx (production)
 
-## 📝 License
+## 📱 Screenshots
 
-This project is open source and available under the MIT License.
+<!-- Add screenshots here when available -->
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🚀 Deployment
+
+### Local Docker
+```bash
+# Development
+docker compose up --build
+
+# Production
+docker compose -f docker-compose.prod.yml up --build
+```
+
+### Cloud Deployment
+The application is ready for deployment to:
+- Google Cloud Run
+- AWS ECS
+- Azure Container Instances
+- Any Docker-compatible platform
+
+## 📚 Documentation
+
+- [Testing Guide](TESTING.md) - Comprehensive testing instructions
+- [Docker Setup](DOCKER_SETUP.md) - Docker deployment guide
+
 ## 🆘 Support
 
-If you encounter any issues or have questions, please open an issue on the repository. 
+If you encounter any issues or have questions:
+1. Check the [Issues](https://github.com/YOUR-USERNAME/PharmaGuard/issues) page
+2. Create a new issue with detailed information
+3. Review the [Testing Guide](TESTING.md) for troubleshooting
+
+## ⭐ Star This Repository
+
+If you find this project useful, please consider giving it a star! ⭐
+
+---
+
+**Built with ❤️ for medicine safety and authenticity verification** 
