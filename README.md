@@ -7,6 +7,8 @@
 
 A modern web application that helps users verify the authenticity of medicines using FDA NDC (National Drug Code) database validation and expiry date checking.
 
+![Screenshot 2025-07-29 231253](https://github.com/user-attachments/assets/d00dd896-f0c9-4ec9-a7c7-1b68c8fb4da9)
+
 ## ✨ Features
 
 - **🔍 NDC Validation**: Verifies medicine codes against the FDA NDC database
@@ -195,6 +197,9 @@ NODE_ENV=development
 ## 📱 Screenshots
 
 <!-- Add screenshots here when available -->
+
+![Screenshot 2025-07-29 231253](https://github.com/user-attachments/assets/c8f6c1ec-1252-43ea-bf74-5731017d5765)
+
 
 ## 🤝 Contributing
 
