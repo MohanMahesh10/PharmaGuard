@@ -251,4 +251,4 @@ If you find this project useful, please consider giving it a star! ⭐
 
 ---
 
-**Built with ❤️ for medicine safety and authenticity verification** 
+**Connect with me On Linkedin https://www.linkedin.com/in/mohan-mahesh-boggavarapu-b1a48b249/** 
