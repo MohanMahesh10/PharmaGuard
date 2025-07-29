@@ -25,7 +25,7 @@ A modern web application that helps users verify the authenticity of medicines u
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR-USERNAME/PharmaGuard.git
+git clone https://github.com/MohanMahesh10/PharmaGuard.git
 cd PharmaGuard
 
 # Start the application
@@ -42,7 +42,7 @@ docker compose up --build
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR-USERNAME/PharmaGuard.git
+git clone https://github.com/MohanMahesh10/PharmaGuard.git
 cd PharmaGuard
 
 # Setup backend
@@ -236,7 +236,7 @@ The application is ready for deployment to:
 ## 🆘 Support
 
 If you encounter any issues or have questions:
-1. Check the [Issues](https://github.com/YOUR-USERNAME/PharmaGuard/issues) page
+1. Check the [Issues](https://github.com/MohanMahesh10/PharmaGuard/issues) page
 2. Create a new issue with detailed information
 3. Review the [Testing Guide](TESTING.md) for troubleshooting
 
