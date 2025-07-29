@@ -78,6 +78,8 @@ The application includes comprehensive test data for easy demonstration:
 
 ## 🏗️ Project Structure
 
+<img width="2033" height="609" alt="diagram-export-7-30-2025-12_17_21-AM" src="https://github.com/user-attachments/assets/0bd5172e-e2f0-4115-8f6f-2e8621eb6f30" />
+
 ```
 pharmaguard/
 ├── 📁 backend/                 # Node.js + Express API
